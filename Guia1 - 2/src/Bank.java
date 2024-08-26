@@ -1,10 +1,8 @@
-package Package;
-
 public class Bank {
 
-    Integer id;
-    String name;
-    double balance;
+    private Integer id;
+    private String name;
+    private double balance;
 
     public Integer getId() {
         return id;
@@ -30,6 +28,8 @@ public class Bank {
         this.balance = balance;
     }
 
+    public Bank (){}
+
     public Bank (Integer id, String name, double balance) {
         this.id = id;
         this.name = name;
@@ -38,14 +38,24 @@ public class Bank {
 
     public void credit(double amount) {
         this.balance = this.balance + amount;
+        mostrarBalance();
     }
     public void debit (double amount) {
-        this.balance = this.balance - amount;
-    }
-    public void objet () {
-        System.out.println(this.id + " " +this.name + " " +this.balance);
+        if (this.balance < amount){
+            System.out.println("Fondos insuficientes");
+
+        }else{
+            this.balance = this.balance - amount;
+            mostrarBalance();
+        }
     }
 
+    public void mostrar() {
+        System.out.println(this.id + " " +this.name + " " +this.balance);
+    }
+    public void mostrarBalance(){
+        System.out.println(this.balance);
+    }
 }
 
 

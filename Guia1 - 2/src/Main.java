@@ -1,8 +1,12 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        Package.Bank bank = new Package.Bank();
+        Bank bank = new Bank(1, "Juan", 15000);
+        bank.mostrar();
+        bank.credit(2500.0);
+        bank.debit(1500.0);
+        bank.debit(30000.0);
+        bank.mostrarBalance();
 
 
     }
